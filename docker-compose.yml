@@ -1,0 +1,19 @@
+services:
+  moodle:
+    build: moodle
+    ports:
+      - "5000:80"
+  anwesenheit:
+    build: anwesenheit
+  db:
+    image: postgres
+    restart: always
+    # ports:
+      # - "8081:5432"
+    environment:
+      POSTGRES_DB: moodle
+      POSTGRES_USER: moodleuser
+      POSTGRES_PASSWORD: pgpassword
+      ANWESENHEIT_DB: anwesenheit
+      ANWESENHEIT_USER: anwesenheit
+      ANWESENHEIT_PASSWORD: anwesenheitpw
