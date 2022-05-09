@@ -3,7 +3,7 @@ WORKDIR /app
 
 RUN apt-get update
 
-COPY . /app/
+COPY ./anwesenheit/* /app/
 
 RUN pip install -r requirements.txt
 
