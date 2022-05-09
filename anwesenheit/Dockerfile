@@ -7,6 +7,8 @@ COPY ./anwesenheit/* /app/
 
 RUN pip install -r requirements.txt
 
+RUN python setup.py
+
 ENV FLASK_APP=__main__
 
 EXPOSE 5000
