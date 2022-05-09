@@ -22,5 +22,6 @@ This project runs all necessary parts of the `anwesenheit` app in a docker compo
 
 ## CAUTION
 
+- There is still work to be done for the proxy to `anwesenheit` and using moodle as root
 - The data is not persisted yet.
 - SSL certificates are not yet supported.
