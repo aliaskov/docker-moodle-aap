@@ -7,16 +7,21 @@ services:
     build: anwesenheit
     depends_on:
       db:
-        condition: service_started
+        condition: service_healthy
   db:
-    build: db
+    build:
+      context: db
+      args:
+        ANWESENHEIT_DB: anwesenheit
+        ANWESENHEIT_USER: anwesenheit
+        ANWESENHEIT_PASSWORD: anwesenheitpw
     restart: always
-    # ports:
-      # - "8081:5432"
+    ports:
+      - 3306:3306
+    healthcheck:
+      test: mysqladmin ping -h localhost -p$$MYSQL_ROOT_PASSWORD && test '0' -eq $$(ps aux | awk '{print $$11}' | grep -c -e '^mysql$$')
     environment:
-      POSTGRES_DB: moodle
-      POSTGRES_USER: moodleuser
-      POSTGRES_PASSWORD: pgpassword
-      ANWESENHEIT_DB: anwesenheit
-      ANWESENHEIT_USER: anwesenheit
-      ANWESENHEIT_PASSWORD: anwesenheitpw
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: moodle
+      MYSQL_USER: moodleuser
+      MYSQL_PASSWORD: pgpassword
