@@ -8,7 +8,7 @@ ENV ANWESENHEIT_USER=$ANWESENHEIT_USER
 ENV ANWESENHEIT_PASSWORD=$ANWESENHEIT_PASSWORD
 ENV ANWESENHEIT_DB=$ANWESENHEIT_DB
 
-COPY . /docker-entrypoint-initdb.d/
+COPY ./*.sql /docker-entrypoint-initdb.d/
 RUN sed -i "s/\$ANWESENHEIT_USER/$ANWESENHEIT_USER/" /docker-entrypoint-initdb.d/*
 RUN sed -i "s/\$ANWESENHEIT_PASSWORD/$ANWESENHEIT_PASSWORD/" /docker-entrypoint-initdb.d/*
 RUN sed -i "s/\$ANWESENHEIT_DB/$ANWESENHEIT_DB/" /docker-entrypoint-initdb.d/*
