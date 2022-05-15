@@ -1,0 +1,3 @@
+[submodule "anwesenheit/anwesenheit"]
+	path = anwesenheit/anwesenheit
+	url = git@github.com:wenig/anwesenheit.git
