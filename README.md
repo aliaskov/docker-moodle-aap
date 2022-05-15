@@ -10,11 +10,9 @@ This project runs all necessary parts of the `anwesenheit` app in a docker compo
 
 ## Installation
 
-1. `cd anwesenheit` into [./anwesenheit/](./anwesenheit/)
-2. `git clone https://github.com/wenig/anwesenheit.git` or any fork
-3. `cd ..` into [./](./)
-4. (maybe adapt the db credentials and ports in [docker-compose.yml](./docker-compose.yml))
-5. (add the credentials from for the `anwesenheit` database to `config.json`)
+1. git clone --recursive git://github.com/wenig/anwesenheit-deploy.git
+2. (maybe adapt the db credentials and ports in [docker-compose.yml](./docker-compose.yml))
+3. (add the credentials from for the `anwesenheit` database to `config.json`)
 
 ## Start
 
