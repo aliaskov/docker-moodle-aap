@@ -21,5 +21,4 @@ This project runs all necessary parts of the `anwesenheit` app in a docker compo
 
 ## CAUTION
 
-- The data is not persisted yet.
 - SSL certificates are not yet supported.
