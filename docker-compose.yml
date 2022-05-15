@@ -15,7 +15,7 @@ services:
         ANWESENHEIT_DB: anwesenheit
         ANWESENHEIT_USER: anwesenheit
         ANWESENHEIT_PASSWORD: anwesenheitpw
-    restart: always
+    restart: on-failure
     volumes:
       - ./db/data:/var/lib/mysql
     ports:
