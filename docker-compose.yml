@@ -1,8 +1,14 @@
 services:
   moodle:
-    build: moodle
+    build:
+      context: moodle
+      args:
+        SSL_CERTIFICATE_FILE: ...
+        SSL_CERTIFICATE_KEY_FILE: ...
+        SSL_CERTIFICATE_CHAIN_FILE: ...
     ports:
       - "5000:80"
+      - "5443:443"
   anwesenheit:
     build: anwesenheit
     depends_on:
